@@ -1,0 +1,61 @@
+:root {
+    --blanco: #ffffff;
+    --turquesa: rgb(15, 182, 211);
+    --primario: #ffc107;
+    --secundario: #0097a7;
+    --oscuro: #212121;
+    --gris: #757575;
+
+    --fuente-principal: 3.8rem;
+}
+
+html {
+    font-size: 62.5%;  /*Asignamos un tamaño inicial a todo el documento html para equilibrarlo con los *rem* */
+}
+body {
+    font-size: 16px;  /* Unido al anterior facilita las equivalencias a pixels  (1rem = 10px)*/
+    font-family: 'Abel', sans-serif;
+}
+
+.titulo {
+    text-align: center;
+    color: var(--turquesa);
+    font-size: var(--fuente-principal);
+    font-weight: bold;
+}
+
+.titulo span {
+    font-size: 2rem;
+}
+
+.contenedor {
+    width: 120rem;
+    /*margin-top: 0;
+    margin-left: auto;
+    margin-bottom: 5rem;
+    margin-right: auto;*/
+
+    margin: 0 auto; /*Equivale al código anterior, y reducirlo a dos parámetros
+                            el primero equivale a top y bottom, y el segundo a right y left
+                            quedando:  margin: 0 auto; en vez de margin: 0 auto 0 auto;*/
+}
+
+.nav-bg {
+    background-color: var(--primario);
+}
+
+.navegacion-principal {
+    /*margin establece la distancia del elemento respecto al resto (distancia exterior), mientras que padding marca la distancia
+    propia del elemento (distancia interior)// padding: 1valor; equivale a darle valores a los cuatro costados*/  
+    padding: 1rem; 
+    display: flex;
+    justify-content: space-between ;    
+}
+
+.navegacion-principal a {
+    background-color: var(--turquesa);
+    color: var(--blanco);
+    text-decoration: none;
+    /*display: block; si quisieramos modificar el inline que viene por defecto
+    para poner el contenido uno bajo el otro*/
+}
