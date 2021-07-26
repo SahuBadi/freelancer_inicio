@@ -46,16 +46,37 @@ body {
 
 .navegacion-principal {
     /*margin establece la distancia del elemento respecto al resto (distancia exterior), mientras que padding marca la distancia
-    propia del elemento (distancia interior)// padding: 1valor; equivale a darle valores a los cuatro costados*/  
-    padding: 1rem; 
+    propia del elemento (distancia interior)// padding: 1valor; equivale a darle valores a los cuatro costados*/   
     display: flex;
     justify-content: space-between ;    
 }
 
 .navegacion-principal a {
-    background-color: var(--turquesa);
     color: var(--blanco);
     text-decoration: none;
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 1rem;
     /*display: block; si quisieramos modificar el inline que viene por defecto
     para poner el contenido uno bajo el otro*/
+}
+
+.navegacion-principal a:hover {
+    background-color: var(--turquesa); 
+    color: var(--oscuro); 
+}
+body {
+    background-color: var(--primario);
+}
+
+@media (min-width: 520px ) {
+    body {
+        background-color: aquamarine;
+    }
+}
+
+@media (min-width: 780px ) {
+    body {
+        background-color: yellowgreen;
+    }
 }
