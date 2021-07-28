@@ -11,16 +11,33 @@
 
 html {
     font-size: 62.5%;  /*Asignamos un tamaño inicial a todo el documento html para equilibrarlo con los *rem* */
+    box-sizing: border-box;
 }
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+
 body {
     font-size: 16px;  /* Unido al anterior facilita las equivalencias a pixels  (1rem = 10px)*/
     font-family: 'Abel', sans-serif;
+    background-image: linear-gradient(to top, #dfe9f3 0%, var(--blanco) 100%);
+}
+h1 {
+    font-size: var(--fuente-principal);
+}
+h2 {
+    font-size: 2.8rem;
+}
+h3 {
+    font-size: 1.8rem;
+}
+h1,h2,h3 {
+    text-align: center;
 }
 
 .titulo {
-    text-align: center;
     color: var(--turquesa);
-    font-size: var(--fuente-principal);
     font-weight: bold;
 }
 
@@ -29,7 +46,7 @@ body {
 }
 
 .contenedor {
-    width: 120rem;
+    max-width: 120rem;
     /*margin-top: 0;
     margin-left: auto;
     margin-bottom: 5rem;
@@ -40,6 +57,34 @@ body {
                             quedando:  margin: 0 auto; en vez de margin: 0 auto 0 auto;*/
 }
 
+.boton {
+    background-color: var(--secundario);
+    color: var(--blanco);
+    padding: 1rem 3rem;
+    margin-top: 1rem;
+    font-size: 2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: .5rem;
+    width: 90%;
+    text-align: center;
+}
+@media (min-width: 768px) {
+    .boton {
+        width: auto;
+    }
+}
+
+.sombra {
+    -webkit-box-shadow: 0px 5px 15px 0px rgba(112,112,112,0.54);
+    -moz-box-shadow: 0px 5px 15px 0px rgba(112,112,112,0.54);
+    box-shadow:  0px 5px 15px 0px rgba(112,112,112,0.54);
+    background-color: var(--blanco);
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
 .nav-bg {
     background-color: var(--primario);
 }
@@ -48,7 +93,15 @@ body {
     /*margin establece la distancia del elemento respecto al resto (distancia exterior), mientras que padding marca la distancia
     propia del elemento (distancia interior)// padding: 1valor; equivale a darle valores a los cuatro costados*/   
     display: flex;
-    justify-content: space-between ;    
+    flex-direction: column;
+    align-items: center; /*también se puede hacer con 'display: block; + text-align: center; en el bloque pertinente (.navegacion principal a)*/  
+}
+
+@media (min-width: 768px) {
+    .navegacion-principal {
+        flex-direction: row;
+        justify-content: space-between; 
+    }
 }
 
 .navegacion-principal a {
@@ -65,7 +118,9 @@ body {
     background-color: var(--turquesa); 
     color: var(--oscuro); 
 }
-body {
+
+/*ejemplos jugando con los media query y cómo afecta el diseño a cada tamaño*/
+/*body {
     background-color: var(--primario);
 }
 
@@ -79,4 +134,38 @@ body {
     body {
         background-color: yellowgreen;
     }
+}*/
+
+.hero {
+    background-image: url(../img/hero.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 450px;
+    padding: 20px;
+    position: relative; /*el padre debe estar en posición relativa siempre*/
+    margin-bottom: 2rem;
+}
+
+.contenido-hero { 
+    position: absolute;/*para que el hijo pueda estar en posición absoluta*/
+    background-color: rgba(0,0,0,.6); /*Nomenclatura anterior para las transparencias (se puede dejar ya que se anula con la siguiente y algunos navegadores aún no toleran la nueva sintáxis, así tendrían el recurso)*/
+    background-color: rgb( 0 0 0 / 60%); /*Nomenclatura nueva*/
+    top: 0;
+    bottom: 0; /*se puede usar widht: 100%; height: 100% en lugar de los cuatro puntos (en mi caso no cubre correctamente ¿?)*/
+    right: 0;
+    left: 0;
+    /*alineación vertical y horizontal*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.contenido-hero h2,
+.contenido-hero p {
+    color: var(--blanco);
+}
+
+.ubicacion {
+    display: flex;
+    align-items: flex-end;
 }
