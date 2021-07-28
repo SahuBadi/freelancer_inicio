@@ -3,6 +3,8 @@
 /* Document
    ========================================================================== */
 
+   /*El Normalize es para generalizar el resultado del código css para que todos los elementos sean consistentes en todos los navegadores sobre los que se reproduzca la página*/
+
 /**
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.

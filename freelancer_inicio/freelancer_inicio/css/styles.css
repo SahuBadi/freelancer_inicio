@@ -11,7 +11,7 @@
 
 html {
     font-size: 62.5%;  /*Asignamos un tamaño inicial a todo el documento html para equilibrarlo con los *rem* */
-    box-sizing: border-box;
+    box-sizing: border-box; /*box model: para que el padding no afecte la medida de los contenidos/contenedores*/
 }
 *, *:before, *:after {
     box-sizing: inherit;
@@ -168,4 +168,80 @@ h1,h2,h3 {
 .ubicacion {
     display: flex;
     align-items: flex-end;
+}
+
+/** Servicios **/
+@media (min-width: 768px) {
+    .servicios {
+        display: grid;
+        /*grid-template-columns: 300px 300px;
+        grid-template-rows: 200px 800px;
+        grid: 200px 800px / 300px 300px; /*Versión resumida de los conceptos anteriores*/
+        /*grid-template-columns: 33.3% 33.3% 33.3%; /*Para obtener el espacio dividido en tres el tanto por ciento es 33.3%*/
+        /*grid-template-columns: 1fr 1fr 1fr; /*Para obtener el mismo resultado sin necesidad de cálculos se divide el espacio en fracciones, especificando las fracciones que queremos y grid se encarga de hacer los cálculos*/
+        grid-template-columns: repeat(3, 1fr); /*aún más sencillo, indicamos la cantidad de veces que queremos una fracción del espacio*/
+        column-gap: 2rem;
+    }    
+} 
+
+.servicio {
+    display: flex;
+    flex-direction: column; /*teniendo el flex-direction: column; ya no es posible centrar los elementos con justify-content*/
+    align-items: center;
+}
+
+
+.servicio h3 {
+    color: var(--secundario);
+    font-weight: normal;
+}
+
+.servicio p {
+    line-height: 2;
+}
+
+.servicio .iconos {
+    height: 15rem;
+    width: 15rem;
+    background-color: var(--primario);
+    border-radius: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/** Contacto **/
+.formulario {
+    background-color: var(--gris);
+    width: min( 60rem, 100% ); /*min necesita dos parámetros, va a utilizar el valor más pequeño. Esta función nos ahorra los media query 
+                                ya que calcula siempre si el 100% es más pequeño que los 600px indicados y si es así toma este valor(va según el tamaño de la pantalla)*/
+    margin: 0 auto; /*para centrar en vez de justify-content, para elemento cuyo padre no es un display-flex (formulario) y elemento de tipo block*/
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+.formulario fieldset {
+    border: none;
+}
+
+.formulario legend {
+    text-align: center;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--primario);
+}
+
+.contenedor-campos {}
+
+.campo {
+    margin-bottom: 1rem;
+}
+
+.campo label {
+    color: var(--blanco);
+    font-weight: bold;
+    margin-bottom: .5rem;
+    display: block;
 }
