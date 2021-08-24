@@ -113,29 +113,29 @@
                     <div class="contenedor-campos">
                         <div class="campo">
                             <label>Nombre</label>
-                            <input type="text" placeholder="Tu nombre">
+                            <input class="input-text" type="text" placeholder="Tu nombre">
                         </div>
                         <div class="campo">    
                             <label>Teléfono</label>
-                            <input type="tel" placeholder="Tu teléfono">
+                            <input class="input-text" type="tel" placeholder="Tu teléfono">
                         </div>
                         <div class="campo">
                             <label>Correo</label>
-                            <input type="email" placeholder="E-mail">
+                            <input class="input-text" type="email" placeholder="E-mail">
                         </div>
                         <div class="campo">
                             <label>Mensaje</label>
-                            <textarea></textarea>
+                            <textarea class="input-text"></textarea> <!--Creamos la clase input-text para unificar todos los inputs y poder darles estilo independientemente de su tipo-->
                         </div>
-                    </div> <!--Cierre contenedor-campos-->
-                    <div>
-                        <input type="submit" value="Enviar">
+                    </div> <!--.contenedor-campos-->
+                    <div class="alinear-derecha flex"><!--añadimos clase "enviar" para personalizar éste botón en concreto// añadimos clase alinear para crear utilidad-->
+                        <input class="boton w-small-100" type="submit" value="Enviar"> <!--añadimos utilidad .w-100 para que el botón coja el 100% del espacio disponible-->
                     </div>
                 </fieldset>
             </form>
         </section>
     </main>
-    <footer>
+    <footer class="footer">
         <p>Todos los derechos reservados. Delia Sahuquillo Freelancer</p>
     </footer>
     
